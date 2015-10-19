@@ -42,8 +42,9 @@ function gatherEmployee(){
 
 function appendDom(employee){
 	console.log(employee);
-	$("#employeeContainer").append("<div class='employee'></div>");
+	$("#employeeContainer").append("<div class='employee well col-md-3'></div>");
 	var $el = $("#employeeContainer").children().last();
+	$("#employeeContainer").append("<div class='col-md-1></div>")
 	$el.data("employeeIndex", employeeIndex);
 	employee.employeeIndex = $el.data("employeeIndex");
 
@@ -52,7 +53,7 @@ function appendDom(employee){
 	$el.append("<p>Employee Number: " + employee.employeenumber + "</p>");
 	$el.append("<p>Position: " + employee.employeejob + "</p>");
 	$el.append("<p>Salary: " + employee.employeecashmoney + "</p>");
-	$el.append("<button class='deleteButton'>Delete</button>");
+	$el.append("<button class='deleteButton btn btn-danger'>Delete</button>");
 }
 
 function totalSalaries(){
